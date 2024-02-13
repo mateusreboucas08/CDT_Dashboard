@@ -1,0 +1,123 @@
+<!--Crie uma tela de cadastro contendo as seguintes informações para o usuário:
+nome de usuário, email, cpf, senha e confirmar senha-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+</head>
+<style>
+    input[type=text], input[type=email], input[type=password] {
+        width: 300px;
+        padding: 10px 20px;
+        margin: 5px 0;
+        display: inline-block;
+        border: none;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #03A678;
+    }
+
+    .login-um{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        width: 400px;
+        height: 520px;
+        text-align: center;
+        background-color: #5DD904;
+        padding: 10px 0 ;
+        border-radius: 80px;
+        border: none;
+    }
+    .login-dois{
+        margin: 20px;
+        margin-top: 10px;
+        background-color: white;
+        padding: 10px 0;
+        border-radius: 80px;
+        border: none;
+        height: 480px;
+    }
+
+    .logo {
+        margin-top: 0px;
+        border: none;
+    }
+
+    input[type=submit] {
+        width: 200px;
+        background-color: #03A678;
+        color: white;
+        font-size: 28px;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 80px;
+    }
+    *input[type=submit]:hover {
+        background-color: #03A678;
+    }
+    input[type=submit]:hover {
+        background-color: #03A678;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    a:hover {
+        color: #03A678;
+    }
+    input[type=submit]:hover {
+        background-color: #5DD904;
+    }
+        /*remova a barra de rolagem da tela*/
+    body {
+        overflow: hidden;
+    }
+        /*tranforme o cursor em uma mãozinha quando passar por cima do botão de entrar*/
+    input[type=submit] {
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="login-um">
+        <div class="login-dois">
+            <form action="cadastro.php" method="post">
+                <img class = "logo" src="img_logo.png" alt="Logo" width="220px" height="180px"><br><br>
+                <input type="text" name="nome" id="nome" placeholder="Nome" required>
+                <br>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <br>
+                <input type="text" name="cpf" id="cpf" placeholder="CPF" required>
+                <br>
+                <input type="password" name="senha" id="senha" placeholder="Senha" required>
+                <br>
+                <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confirmar Senha" required>
+                <br>
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </div>
+</body>
+<!--Faça um script pata confirmar se as senhas cadastradas são iguais-->
+<script>
+    const senha = document.getElementById('senha');
+    const confirmarSenha = document.getElementById('confirmarSenha');
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', (event) => {
+        if (senha.value !== confirmarSenha.value) {
+            alert('As senhas não são iguais');
+            event.preventDefault();
+        }
+    });
+</script>
+
+</html>
