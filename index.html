@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <lang="pt-br">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        input[type=text], input[type=password] {
+            width: 300px;
+            padding: 10px 20px;
+            margin: 4px 0;
+            display: inline-block;
+            border: none;
+            box-sizing: border-box;
+            
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #03A678;
+        }
+        .login {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0 auto;
+            width: 400px;
+            height: 490px;
+            text-align: center;
+            background-color: #5DD904;
+            padding: 10px 0 ;
+            border-radius: 80px;
+            border: none;
+        }
+        .login-2{
+            margin: 20px;
+            margin-top: 10px;
+            background-color: white;
+            padding: 10px 0;
+            border-radius: 80px;
+            border: none;
+            height: 450px;
+
+        }
+        .logo{
+            margin-top: 1px;
+            border: none;
+
+        }
+        input[type=submit] {
+            width: 200PX;
+            background-color: #03A678;
+            color: white;
+            font-size: 28px;
+            padding: 14px 20px;
+            margin: 2px 0;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #03A678;
+        }
+        a {
+            text-decoration: none;
+            color: #03A678;
+            font-size: 20px;
+        }
+        a:hover {
+            color: #5DD904;
+        }
+        /*crie um hover para o botão de entrar*/
+        input[type=submit]:hover {
+            background-color: #5DD904;
+        }
+        /*remova a barra de rolagem da tela*/
+        body {
+            overflow: hidden;
+        }
+        /*tranforme o cursor em uma mãozinha quando passar por cima do botão de entrar*/
+        input[type=submit] {
+            cursor: pointer;
+        }
+        /*deixe essa tela responsiva, sem mexer na imagem*/
+        @media (max-width: 600px) {
+            .login {
+                width: 100%;
+                height: 100%;
+            }
+            .login-2 {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div class="login-2">
+            <img class = "logo" src="img_logo.png" alt="Logo" width="220px" height="180px"><br><br>
+            <form action="home.php">
+                <input type="text" id="login" name="login" placeholder="Usuário"><br><br>
+                <input type="password" id="senha" name="senha" placeholder="Senha"><br><br>
+                <input type="submit" value="ENTRAR">
+            </form>
+            <br>
+            <a href="cadastro.php">Cadastrar</a>
+            <br>
+            <a href="esqueciMinhaSenha.php">Esqueci minha senha</a>
+        </div>
+    </div>
+</body>
+
+</html>
