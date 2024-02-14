@@ -106,18 +106,51 @@ nome de usuário, email, cpf, senha e confirmar senha-->
         </div>
     </div>
 </body>
-<!--Faça um script pata confirmar se as senhas cadastradas são iguais-->
+<!--Faça um script pata confirmar se as senhas cadastradas são iguai-->
 <script>
     const senha = document.getElementById('senha');
     const confirmarSenha = document.getElementById('confirmarSenha');
     const form = document.querySelector('form');
-
+    const cpf = document.getElementById('cpf');
+    const email = document.getElementById('email');
+    const nome = document.getElementById('nome');
+    cpf.addEventListener('input', (event) => {
+        cpf.value = cpf.value.replace(/\D/g, '');
+        cpf.value = cpf.value.replace(/(\d{3})(\d)/, '$1.$2');
+        cpf.value = cpf.value.replace(/(\d{3})(\d)/, '$1.$2');
+        cpf.value = cpf.value.replace(/(\d{3})(\d{1,2})/, '$1-$2');
+    }
+    );
     form.addEventListener('submit', (event) => {
         if (senha.value !== confirmarSenha.value) {
-            alert('As senhas não são iguais');
+            alert('Senhas diferentes');
             event.preventDefault();
         }
-    });
+    })
+    email.addEventListener('input', (event) => {
+        email.value = email.value.replace(/[^a-z0-9@.]/g, '');
+    })
+    nome.addEventListener('input', (event) => {
+        nome.value = nome.value.replace(/[^a-z0-9]/g, '');
+    })
+    confirmarSenha.addEventListener('input', (event) => {
+        confirmarSenha.value = confirmarSenha.value.replace(/[^a-z0-9]/g, '');
+    })
+    senha.addEventListener('input', (event) => {
+        senha.value = senha.value.replace(/[^a-z0-9]/g, '');
+    })
+    confirmarSenha.addEventListener('input', (event) => {
+        confirmarSenha.value = confirmarSenha.value.replace(/[^a-z0-9]/g, '');
+    })
+    /*aça um script que ao apertar no botão cadastrar, as informações sejam passadas para o
+banco de dados "cadastros.db"*/
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        fetch('cadastro.php', {
+            method: 'POST',
+            body: formData
+        })
+    })
 </script>
-
 </html>

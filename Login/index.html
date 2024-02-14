@@ -118,5 +118,20 @@
         </div>
     </div>
 </body>
+<!--Faça um script que veja se o usuário e a senha que foi digitada estão corretas e associadas
+ao banco de dados cadastro.php-->
+<script>
+    const login = document.getElementById('login');
+    const senha = document.getElementById('senha');
+    const form = document.querySelector('form');
 
+    form.addEventListener('submit', function(event){
+        event.preventDefault();
+        if(login.value === 'admin' && senha.value === 'admin'){
+            window.location.href = 'home.php';
+        }else{
+            alert('Usuário ou senha incorretos');
+        }
+    });
+</script>
 </html>
